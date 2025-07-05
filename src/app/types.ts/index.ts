@@ -1,1 +1,1 @@
-export interface RouletteItem{icon: string; background: string; id: string; isGreen: string;}
+export interface RouletteItem{icon: string; background: string; id: string; isGreen: boolean;}

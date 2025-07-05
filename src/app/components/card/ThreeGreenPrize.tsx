@@ -2,11 +2,14 @@ import React from "react";
 import Image from "next/image";
 import { RouletteItem } from "@/app/types.ts";
 
-function RouletteHistory({ cards }:{cards:RouletteItem[]}) {
+function ThreeGreenPrize({ cards }: { cards: RouletteItem[] }) {
   return (
-    <>
+    <div className="flex place-content-center content-between mt-[50px] gap-[100px]">
+      <p className="text-white">
+        <Image src={"/poker-chip.svg"} alt="icon" width={16} height={16} />
+      </p>
       <ul className="flex">
-        {cards.map((card,index) => {
+        {cards.map((card, index) => {
           return (
             <li
               key={index}
@@ -24,8 +27,8 @@ function RouletteHistory({ cards }:{cards:RouletteItem[]}) {
           );
         })}
       </ul>
-    </>
+    </div>
   );
 }
 
-export default RouletteHistory;
+export default ThreeGreenPrize;
