@@ -4,11 +4,11 @@ import { v4 as uuidv4 } from "uuid";
 
 
 export const ROULETTE_ITEMS:RouletteItem[] = [
-  { icon: "/linesLight.svg", background: "#343843", id: uuidv4(), isGreen: false },
-  { icon: "/linesDark.svg", background: " #FF4242", id: uuidv4(), isGreen: false },
-  { icon: "/linesLight.svg", background: " #47FF69", id: uuidv4(), isGreen: true },
-  { icon: "/jokerHatLight.svg", background: "#343843", id: uuidv4(), isGreen: false },
-  { icon: "/jokerHatDark.svg", background: " #FF4242", id: uuidv4(), isGreen: false },
+  { icon: "/linesLight.svg", background: "#343843", id: uuidv4(), isGreen: false, type: 'linesLight' },
+  { icon: "/linesDark.svg", background: " #FF4242", id: uuidv4(), isGreen: false, type: 'linesDark' },
+  { icon: "/linesLight.svg", background: " #47FF69", id: uuidv4(), isGreen: true, type: 'linesGreen' },
+  { icon: "/jokerHatLight.svg", background: "#343843", id: uuidv4(), isGreen: false, type: 'hatLight' },
+  { icon: "/jokerHatDark.svg", background: " #FF4242", id: uuidv4(), isGreen: false, type: 'hatDark' },
 ];
 
 

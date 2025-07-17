@@ -1,1 +1,1 @@
-export interface RouletteItem{icon: string; background: string; id: string; isGreen: boolean;}
+export interface RouletteItem{icon: string; background: string; id: string; isGreen: boolean; type: "linesLight" | "linesDark" | "linesGreen" | "hatLight" | "hatDark"}
