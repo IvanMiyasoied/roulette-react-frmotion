@@ -3,10 +3,12 @@ import Image from "next/image";
 import { RouletteItem } from "@/app/types.ts";
 
 function RouletteHistory({ cards }:{cards:RouletteItem[]}) {
+         const lastTenCards = cards.slice(-10);
   return (
     <>
+      
       <ul className="flex">
-        {cards.map((card,index) => {
+        {lastTenCards .map((card,index) => {
           return (
             <li
               key={index}

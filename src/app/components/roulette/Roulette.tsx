@@ -45,7 +45,7 @@ export function Roulette() {
     setCardHistory((prev) => {
       const refreshedHistory = [...prev, duplicatedCards[randomIndexCard]];
 
-      return refreshedHistory.slice(-10);
+      return refreshedHistory;
     });
     if (duplicatedCards[randomIndexCard].isGreen) {
       setGreenCards((prev) => {
@@ -60,10 +60,17 @@ export function Roulette() {
     return () => clearInterval(timerId);
   }, []);
 
+   const clearCards = () => {
+    setGreenCards([]);
+   }
+
   return (
     <>
+    <div className="flex justify-between">
       <RouletteHistory cards={cardHistory} />
       <CardStatistic cards={cardHistory} />
+
+    </div>
       <div className="relative  w-[1280px] overflow-hidden place-self-center mt-[100px]">
         <div className="absolute top-0 bottom-0 right-0 left-0 flex justify-center z-10 bg-[linear-gradient(to_right,#2e2b2a_0%,rgba(0,0,0,0)_10%,rgba(0,0,0,0)_50%),linear-gradient(to_left,#2e2b2a_0%,rgba(0,0,0,0)_10%,rgba(0,0,0,0)_50%)] ">
           <div className=" w-[100px] h-[100px] border border-solid content-center ">
@@ -90,7 +97,7 @@ export function Roulette() {
           })}
         </motion.ul>
       </div>
-      <ThreeGreenPrize cards={greenCards} />
+      <ThreeGreenPrize cards={greenCards} clearCards={clearCards} />
     </>
   );
 }
