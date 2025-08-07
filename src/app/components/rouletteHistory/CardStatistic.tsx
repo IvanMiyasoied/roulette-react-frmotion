@@ -3,12 +3,12 @@ import { ROULETTE_ITEMS } from "../roulette/data";
 import Image from "next/image";
 import { RouletteItem } from "@/app/types.ts";
 
-function countStat(cards : RouletteItem[]) {
+function countStat(cards: RouletteItem[]) {
   return cards.reduce((counts, card) => {
     const typeCard = card.type;
     counts[typeCard] = (counts[typeCard] || 0) + 1;
     return counts;
-  }, {} as Record<RouletteItem['type'], number>);
+  }, {} as Record<RouletteItem["type"], number>);
 }
 function CardStatistic({ cards }: { cards: RouletteItem[] }) {
   const last100Cards = cards.slice(-100);
@@ -27,19 +27,26 @@ function CardStatistic({ cards }: { cards: RouletteItem[] }) {
               key={index}
               style={{
                 background: currentElem?.background,
-                width: 30,
-                placeContent: "center",
+                width: "auto",
+                minWidth: 30,
                 borderRadius: 5,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: 10,
+                padding: 5
               }}
             >
-              <Image
-                src={currentElem?.icon || ''}
-                alt="icon"
-                width={16}
-                height={16}
-                className="ml-1.5"
-              />{" "}
-              {count}
+              <span>
+                <Image
+                  src={currentElem?.icon || ""}
+                  alt="icon"
+                  width={16}
+                  height={16}
+                  className="ml-0"
+                />{" "}
+              </span>
+              <span className="ml-5 text-white">{count}</span>
             </li>
           );
         })}
